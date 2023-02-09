@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import Amount from './Components/Amount';
+import InputData from './Components/InputData';
 
-function App() {
+const App = () => {
+  const [amount, setAmount] = useState(1);
+  const [summ, setSumm] = useState(3500);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <Amount amount={amount} setAmount={setAmount} summ={summ} setSumm={setSumm} />
+      <InputData />
     </div>
   );
-}
+};
 
 export default App;
